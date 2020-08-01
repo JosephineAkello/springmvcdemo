@@ -1,6 +1,7 @@
 package com.example.springmvcdemo.controller;
 
 import com.example.springmvcdemo.service.LoginService;
+import com.example.springmvcdemo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,16 +14,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TodoController {
 
    @Autowired
-   LoginService service;
+   TodoService service;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginPage(){
-        return "login";
+    @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
+    public String handleLoinRequest(@RequestParam String name, ModelMap model){
+        model.addAttribute("todos", service.retrieveTodos("user"));
+        return "welcome";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String handleLoginRequest(@RequestParam String name, ModelMap model){
-       model.put("name", name);
+       model.addAttribute("todos", service.retrieveTodos("user"));
         return "welcome";
     }
 }
