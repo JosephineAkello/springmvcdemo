@@ -1,23 +1,21 @@
-<%@ page import="java.util.Date" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Yahoo !!!! From JSP</title>
-</head>
-<body>
-<%--//this is a scriplet--%>
-<%--<%--%>
-<%--Date date = new Date();--%>
-<%--%>--%>
-<form action="/login" method="post">
-    <p><font color="red"></font> ${errorMessage}</p>
-    Enter your name <input type="text" name="name">
-    <input type="password" value="password">
-    <input type="submit" value="Login">
-</form>
+<%@ include file="fragments/header.jspf"%>
+<%@ include file="fragments/navigation.jspf"%>
+<div class="container">
+    <p>
+        <font color="red">${errorMessage}</font>
+    </p>
+    <form action="/login" method="POST">
+        <fieldset class="form-group">
+            <label>Name</label> <input name="name" type="text"
+                                       class="form-control" />
+        </fieldset>
+        <fieldset class="form-group">
+            <label>Password</label> <input name="password" type="password"
+                                           class="form-control" />
+        </fieldset>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
 
-</body>
-</html>
+</div>
+
+<%@ include file="fragments/footer.jspf"%>
