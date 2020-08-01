@@ -5,12 +5,10 @@
   Time: 12:43 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ include file="fragments/header.jspf"%>
+<%@ include file="fragments/navigation.jspf"%>
+<div class="container">
+    Application has encountered an error. Please contact support on ...
+</div>
 
-</body>
-</html>
+<%@ include file="fragments/footer.jspf"%>
