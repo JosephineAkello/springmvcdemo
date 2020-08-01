@@ -16,6 +16,8 @@
 <div class ="container">
 <H1>Addd a Todo</H1>
 <form:form method="post" commandName="todo">
+    <form:hidden path="id"/>
+    <form:hidden path="user"/>
     <fieldset class="form-group">
         <form:label path="desc">Description</form:label>
         <form:input path="desc" type="text"
