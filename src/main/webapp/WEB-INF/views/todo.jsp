@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:formatDate pattern="dd/MM/yyyy"
+                value="${todo.targetDate}" />
 <html>
 <head>
     <title>Add a Todo</title>
@@ -23,6 +26,12 @@
         <form:input path="desc" type="text"
         class ="form-control" required ="required"/>
         <form:errors path="desc" cssClass = "text-warning" />
+    </fieldset>
+    <fieldset class="form-group">
+        <form:label path="targetDate">TargetDate</form:label>
+        <form:input path="targetDate" type="text"
+                    class ="form-control" required ="required"/>
+        <form:errors path="targetDate" cssClass = "text-warning" />
     </fieldset>
 
     <input class="btn btn-success" type="submit" value="add">
