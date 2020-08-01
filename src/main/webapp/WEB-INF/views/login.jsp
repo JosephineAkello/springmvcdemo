@@ -12,7 +12,7 @@
 <%--<%--%>
 <%--Date date = new Date();--%>
 <%--%>--%>
-<form action="/login.d" method="post">
+<form action="/login" method="post">
     <p><font color="red"></font> ${errorMessage}</p>
     Enter your name <input type="text" name="name">
     <input type="password" value="password">
