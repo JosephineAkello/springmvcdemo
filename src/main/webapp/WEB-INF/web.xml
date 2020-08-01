@@ -33,4 +33,8 @@
     </filter-mapping>
 
 
+    <error-page>
+        <location>/WEB-INF/views/error.jsp</location>
+    </error-page>
+
 </web-app>
