@@ -17,24 +17,31 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("name")
 public class TodoController {
 
-   @Autowired
-   TodoService service;
+    @Autowired
+    TodoService service;
 
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
-    public String listTodos(ModelMap model){
+    public String listTodos(ModelMap model) {
         model.addAttribute("todos", service.retrieveTodos("user"));
         return "list-todos";
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
-    public String showTodoPage(){
+    public String showTodoPage() {
         return "todo";
     }
 
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
-    public String addTodoPage(ModelMap model, @RequestParam String desc){
-       service.addTodo("in28mintes", desc,new Date(), false);
+    public String addTodoPage(ModelMap model, @RequestParam String desc) {
+        service.addTodo("in28mintes", desc, new Date(), false);
+        model.clear();
+        return "redirect::list-todo";
+    }
+
+    @RequestMapping(value = "/delete-todo", method = RequestMethod.GET)
+    public String deleteTodoPage(ModelMap model, @RequestParam int id) {
+        service.deleteTodo(id);
         model.clear();
         return "redirect::list-todo";
     }
