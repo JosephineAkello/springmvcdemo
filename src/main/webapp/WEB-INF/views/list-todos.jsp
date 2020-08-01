@@ -11,6 +11,6 @@
     <title>Your To-Dos are:</title>
 </head>
 <body>
-
+<a class ="button" href="/add-todo">Add</a>
 </body>
 </html>

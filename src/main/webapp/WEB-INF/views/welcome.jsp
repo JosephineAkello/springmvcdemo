@@ -8,6 +8,6 @@
     <title>Yahoo !!!! From JSP</title>
 </head>
 <body>
-Welcome
+See your to-dos here <a href="/list-todos">manage your to-dos</a>
 </body>
 </html>

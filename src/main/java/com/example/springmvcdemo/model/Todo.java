@@ -10,6 +10,13 @@ public class Todo {
     private Date targeDate;
     private  boolean isDone;
 
+    public Todo(int id, String user, String desc, Date targeDate, boolean isDone) {
+        this.id = id;
+        this.user = user;
+        this.desc = desc;
+        this.targeDate = targeDate;
+        this.isDone = isDone;
+    }
 
     @Override
     public String toString() {
