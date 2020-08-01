@@ -61,6 +61,7 @@ public class TodoController {
         if (result.hasErrors()) {
             return "todo";
         }
+        todo.setUser((String) model.get("name"));
         service.updateTodo(todo);
         return "redirect:list-todos";
     }
